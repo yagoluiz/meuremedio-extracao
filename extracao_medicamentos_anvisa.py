@@ -8,7 +8,7 @@ import sys
 csv_path = r'C:\Dev\Python\UnB\meuremedio-mineracao\xls_conformidade_2018_03_14 - formatada.csv'
 txt = r'medicamentos.txt'
 
-
+  
 # leitura do arquivo .csv
 def reader_csv(path):
     with open(path, 'r') as csv_file:
