@@ -5,7 +5,7 @@ import unidecode
 import sys
 
 # leitura e saida de arquivos .csv
-csv_path = r'C:\Dev\Python\UnB\meuremedio\xls_conformidade_2018_03_14 - formatada.csv'
+csv_path = r'C:\Dev\Python\UnB\meuremedio-mineracao\xls_conformidade_2018_03_14 - formatada.csv'
 txt = r'medicamentos.txt'
 
 
