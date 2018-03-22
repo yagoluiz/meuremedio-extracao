@@ -8,7 +8,7 @@ import sys
 csv_path = r'C:\Dev\Python\meuremedio-mineracao\xls_conformidade_2018_03_14 - formatada.csv'
 txt = r'medicamentos.txt'
 
-  
+
 # leitura do arquivo .csv
 def reader_csv(path):
     with open(path, 'r') as csv_file:
@@ -39,8 +39,8 @@ def write_json(data):
         # atributos selecionados do arquivo .csv
         atributos = {'PRINCIPIO_ATIVO': data[0], 'CNPJ': data[1], 'LABORATORIO': data[2], 'CODIGO_GGREM': format_value(data[3]),
                      'REGISTRO': format_value(data[4]), 'EAN': format_value(data[5]), 'PRODUTO': data[6], 'APRESENTACAO': data[7],
-                     'CLASSE_TERAPEUTICA': data[8], 'TIPO_PRODUTO': data[9], 'PF_0': data[10].replace(',', '.'),
-                     'PF_18': data[16].replace(',', '.'), 'RESTRICAO_HOSPITALAR': data[28], 'TARJA': data[34]}
+                     'CLASSE_TERAPEUTICA': data[8], 'TIPO_PRODUTO': data[9], 'PF_0': format_number(data[10]),
+                     'PMC_0': format_number(data[19]), 'RESTRICAO_HOSPITALAR': data[28], 'TARJA': data[34]}
 
         json.dump(atributos, txt_file)
 
@@ -51,6 +51,11 @@ def format_value(data):
         return int(float(data))
     except:
         return ''
+
+
+# formatar casas decimais
+def format_number(data):
+    return data.replace('.', ',')
 
 
 # formatar dados em unidecode

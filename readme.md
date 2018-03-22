@@ -6,3 +6,5 @@
 ### Atualização dos dados
 
 Os dados disponibilizados pela site da [ANVISA](http://portal.anvisa.gov.br/listas-de-precos) possui mais revelância e são mais atualizados do que os dados abertos disponibilizados pelo Governo em sua plataforma padrão [dados.gov.br](http://dados.gov.br).
+
+**Data de arquivos extraídos:** 14/03/2018
