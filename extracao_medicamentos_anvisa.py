@@ -5,7 +5,7 @@ import unidecode
 import sys
 
 # leitura e saida de arquivos .csv
-csv_path = r'C:\Dev\Python\meuremedio-mineracao\xls_conformidade_2018_03_14 - formatada.csv'
+csv_path = r'C:\Dev\Python\UnB\meuremedio-mineracao\xls_conformidade_2018_03_14 - formatada.csv'
 txt = r'medicamentos.txt'
 
 
@@ -37,10 +37,12 @@ def count_csv(path):
 def write_json(data):
     with open(txt, 'a', newline='') as txt_file:
         # atributos selecionados do arquivo .csv
-        atributos = {'PRINCIPIO_ATIVO': data[0], 'CNPJ': data[1], 'LABORATORIO': data[2], 'CODIGO_GGREM': format_value(data[3]),
-                     'REGISTRO': format_value(data[4]), 'EAN': format_value(data[5]), 'PRODUTO': data[6], 'APRESENTACAO': data[7],
-                     'CLASSE_TERAPEUTICA': data[8], 'TIPO_PRODUTO': data[9], 'PF_0': format_number(data[10]),
-                     'PMC_0': format_number(data[19]), 'RESTRICAO_HOSPITALAR': data[28], 'TARJA': data[34]}
+        atributos = {'principioAtivo': data[0], 'laboratorioCnpj': data[1], 'laboratorioNome': data[2],
+                     'laboratorioRegistro': format_value(data[4]), 'nome': data[6], 'apresentacao': data[7],
+                     'classeTerapeutica': data[8], 'tipo': data[9], 'precoFabrica': format_number(data[10]),
+                     'precoConsumidor0': format_number(data[19]), 'precoConsumidor12': format_number(data[20]),
+                     'precoConsumidor17': format_number(data[21]), 'precoConsumidor20': format_number(data[27]), 
+                     'restricaoHospitalar': data[28], 'tarja': data[34]}
 
         json.dump(atributos, txt_file)
 
